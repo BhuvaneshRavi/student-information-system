@@ -1,0 +1,62 @@
+CREATE DATABASE University;
+
+select database();
+
+use university;
+
+CREATE TABLE Autoid
+(
+  Aid INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+);
+
+CREATE TABLE Student
+(
+  id VARCHAR(10) NOT NULL PRIMARY KEY DEFAULT '0',
+  firstname VARCHAR(30),
+  lastname  VARCHAR(30),
+  address   VARCHAR(30),
+  email  	  VARCHAR(30), 	
+  dob VARCHAR(10),
+  phone_no  INT(10),
+  degree VARCHAR(5),
+  gender VARCHAR(6), 
+  qualification VARCHAR(10),
+  year_of_joining INT(4),
+  joining_term VARCHAR(10)
+  );
+  
+DELIMITER $$ 
+CREATE TRIGGER tg_table_sid
+BEFORE INSERT ON student
+FOR EACH ROW
+BEGIN
+  INSERT INTO autoid VALUES (NULL);
+  SET NEW.id = CONCAT('KB', LPAD(LAST_INSERT_ID(), 8, '0'));
+END $$
+DELIMITER ;
+  
+  
+INSERT INTO student (firstname,lastname) 
+VALUES ('Kannan','Seenivasan');
+
+Select * from Student;
+
+Select * from login;
+
+CREATE TABLE Login
+(
+username VARCHAR(10),
+password  VARCHAR(10),
+type VARCHAR(10),
+foreign key (username) references student(id)
+		on delete cascade
+);
+
+select * from student order by id desc limit 1;
+
+delete from student;
+
+select * from login;
+
+INSERT INTO login (username,password,type) 
+VALUES ('Kannan','Seenivasan');
