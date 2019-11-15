@@ -1,0 +1,174 @@
+<div class="card">   
+
+    <div class="card-body">
+        <div class="form-horizontal">
+            <pre>
+                {{json}}
+            </pre>
+             
+                <h2>Student Registration Form</h2>
+               
+            <form name ="form" [formGroup] ="form" #studentdata = "ngForm" (ngSubmit) ="onSubmit()">
+                
+                <div class="form-group"> 
+                    <label for="firstName" class="col-sm-3 control-label">First Name :</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="firstName" placeholder="First Name" 
+                        class="form-control" formControlName="firstName" [ngClass] 
+                        = "{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" ngModel>
+                        <div class = "invalid-feedback">
+                            <div>First Name is required</div>
+                        </div>  
+                     </div>   
+                </div>
+    
+                <div class="form-group">
+                    <label for="lastName" class="col-sm-3 control-label">Last Name :</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="lastName" placeholder="Last Name" class="form-control" formControlName="lastName"
+                        [ngClass] ="{'is-invalid':form.get('lastName').touched && form.get('lastName').invalid}" >
+                         <div class = "invalid-feedback">
+                            <div>Last Name is required</div>
+                        </div> 
+                    </div> 
+                </div>
+    
+                <div class="form-group">
+                    <label for="Address" class="col-sm-3 control-label">Address: </label>
+                    <div class="col-sm-9">
+                        <input type="text" id="Address" placeholder="Address" class="form-control" name= "Address" formControlName="Address"
+                        [ngClass] ="{'is-invalid':form.get('Address').touched && form.get('Address').invalid}">
+                        <div class = "invalid-feedback">
+                            <div>Address is required</div>
+                        </div> 
+                    </div> 
+                </div>
+    
+                <div class="form-group">
+                        <label for="email" class="col-sm-3 control-label">Email: </label>
+                        <div class="col-sm-9">
+                            <input type="email" id="email" placeholder="Email" class="form-control" name= "email" formControlName="email"
+                            [ngClass] ="{'is-invalid':form.get('email').touched && form.get('email').invalid}">
+                            
+                            <div class = "invalid-feedback">
+                                    <div>Mail id is required</div>
+                             </div>  
+                        </div>
+                </div>
+    
+               <div class="form-group">
+                    <label for="birthDate" class="col-sm-3 control-label">Date of Birth: </label>
+                    <div class="col-sm-9">
+                        <input type="date" id="birthDate" class="form-control" formControlName="birthDate"
+                         [ngClass] ="{'is-invalid':form.get('birthDate').touched && form.get('birthDate').invalid}">
+                        <div class = "invalid-feedback">
+                            <div>Date of Birth is required</div>
+                        </div>  
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="phoneNumber" class="col-sm-3 control-label">Phone number: </label>
+                    <div class="col-sm-9">
+                        <input type="Number" id="phoneNumber" placeholder="Phone number" class="form-control" formControlName="phoneNumber"
+                        [ngClass] ="{'is-invalid':form.get('phoneNumber').touched && form.get('phoneNumber').invalid}">
+    
+                        <div class = "invalid-feedback">
+                                <div>Phone number is required</div>
+                                <div></div>
+                        </div>  
+                    </div>
+                </div>
+           
+                <div class="form-group">
+                        <label for="Degree" class="col-sm-3 control-label">Degree :</label>
+                    <div class="col-sm-9">
+                        <select class = "form-control" id ="Degree" class="form-control" formControlName="Degree"
+                        [ngClass] ="{'is-invalid':form.get('Degree').touched && form.get('Degree').invalid}">
+                            <option>B.sc</option>
+                            <option>M.sc</option>
+                            <option>B.E</option>
+                            <option>M.E</option>
+                            <option>M.S</option>
+                            <option>MBA</option>
+                        </select>
+                    </div>
+                    <div class = "invalid-feedback">
+                            <div>Please choose the degree program:</div>
+                        </div>  
+                </div>
+    
+                <div class="form-group">
+                    <label class="control-label col-sm-3">Gender:</label>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="Male" value="Male" formControlName="Gender">Male
+                                </label>
+                            </div>  
+    
+                            <div class="col-sm-4">
+                                <label class="radio-inline">
+                                    <input type="radio" id="Female" value="Female" formControlName="Gender">Female
+                                </label>
+                            </div>
+                        </div>
+                        <div class = "invalid-feedback">
+                                <div>Gender is required</div>
+                            </div>  
+                    </div>
+                </div> <!-- /.form-group -->
+    
+                <div class="form-group">
+                        <label for="qualification" class="col-sm-3 control-label"> Previous Academic Qualification: </label>
+                    <div class="col-sm-9">
+                        <select class = "form-control" id ="sel1" formControlName="sel1">
+                            <option>10th</option>
+                            <option>12th</option>
+                            <option>Bachelors</option>
+                            <option>Master's</option>
+                        </select>
+                    </div>
+                    <div class = "invalid-feedback">
+                            <div>Previous Academic is required</div>
+                        </div>  
+                </div>
+    
+                <div class="form-group">
+                    <label for="Joining year" class="col-sm-3 control-label"> Joining year: </label>
+                    <div class="col-sm-9">
+                        <select class = "form-control" id ="sel3" formControlName="sel3">
+                        <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        </select>
+                    </div>
+                    <div class = "invalid-feedback">
+                        <div>Joining year is required</div>
+                    </div>  
+            </div>
+    
+    
+                <div class="form-group">
+                    <label for="Joining term" class="col-sm-3 control-label"> Joining term: </label>
+                <div class="col-sm-9">
+                    <select class = "form-control" id ="sel2" formControlName="sel2">
+                        <option>Fall</option>
+                        <option>Winter</option>
+                        <option>Summer</option>
+                    </select>
+                </div>
+                <div class = "invalid-feedback">
+                        <div>Joining term is required</div>
+                    </div>  
+                </div>
+                
+                <div class="col-sm-3 col-sm-offset-3">
+                <button type="submit" class="btn btn-primary btn-block" value ="Add Student">Register</button>
+                </div>    
+            </form> <!-- /form -->
+        </div>
+    </div> <!-- ./container -->
+</div>
+    
