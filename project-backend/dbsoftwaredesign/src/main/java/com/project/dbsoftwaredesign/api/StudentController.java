@@ -19,12 +19,12 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @PostMapping
-    public void registerStudent(@RequestBody Student student){
-        studentService.registerStudent(student);
+    @PostMapping("/registerstudent")
+    public Student registerStudent(@RequestBody Student student){
+        return studentService.registerStudent(student);
     }
 
-    @GetMapping
+    @GetMapping("/allstudents")
     public List<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
