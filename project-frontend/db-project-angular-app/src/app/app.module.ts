@@ -9,13 +9,18 @@ import { HomeComponent } from './views/home/home.component';
 import { LoginComponent } from './views/login/login.component';
 import { StudentregComponent } from './views/studentreg/studentreg.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ViewstudentComponent } from './viewstudent/viewstudent.component';
+import {freeApiServices} from './services/freeapi.services';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    StudentregComponent
+    StudentregComponent,
+    ViewstudentComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [freeApiServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

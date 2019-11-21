@@ -25,7 +25,8 @@ export class StudentregComponent implements OnInit {
     Gender: new FormControl('', Validators.required),
     sel1: new FormControl('', Validators.required),
     sel2: new FormControl('', Validators.required),
-    sel3: new FormControl('', Validators.required)
+    sel3: new FormControl('', Validators.required),
+    admission: new FormControl('', Validators.required)
 
   });
   
