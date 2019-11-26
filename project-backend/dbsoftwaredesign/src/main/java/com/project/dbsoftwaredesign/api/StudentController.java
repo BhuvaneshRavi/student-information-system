@@ -20,11 +20,13 @@ public class StudentController {
     }
 
     @PostMapping("/registerstudent")
+    @CrossOrigin(origins = "http://localhost:4200")
     public Student registerStudent(@RequestBody Student student){
         return studentService.registerStudent(student);
     }
 
     @GetMapping("/allstudents")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
