@@ -23,4 +23,12 @@ public interface CredentialMapper {
             @Result(column = "type", property = "type"),
     })
     List<Credentials> allCredentials(Credentials credentials);
+
+    @Select("select * from credentials where username = #{username}")
+    @Results({
+    @Result(column = "username", property = "username"),
+    @Result(column = "password", property = "password"),
+    @Result(column = "type", property = "type"),
+    })
+    Credentials checkCredentials(Credentials credentials);
 }

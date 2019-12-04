@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RequestMapping("api/v1/course")
 @RestController
 public class CourseController {
@@ -19,18 +20,21 @@ private final CourseService courseService;
     }
 
     @PostMapping("/addcourse")
+    @CrossOrigin(origins = "http://localhost:4200")
     public String createCourse(@RequestBody Course course){
         courseService.addCourse(course);
         return course.getName().concat("  - course added successfully");
     }
 
     @PostMapping("/removecourse")
+    @CrossOrigin(origins = "http://localhost:4200")
     public String removeCourse(@RequestBody Course course){
         courseService.removeCourse(course);
         return course.getName().concat("  - course removed successfully");
     }
 
     @GetMapping("/allcourses")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<Course> getAllCredentials(Course course){
         return courseService.allCourses(course);
     }

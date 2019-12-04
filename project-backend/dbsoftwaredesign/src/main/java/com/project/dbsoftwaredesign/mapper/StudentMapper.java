@@ -49,4 +49,21 @@ public interface StudentMapper {
     })
     List<Student> getAllStudents();
 
+    @Select("select id, firstname,lastname,address,email,dob,phone,degree,gender,qualification,year_of_joining,joining_term,admission_number from student where id = #{id}")
+    @Results({
+            @Result(column="id", property="id"),
+            @Result(column="firstname", property="firstname"),
+            @Result(column="lastname", property="lastname"),
+            @Result(column="address", property="address"),
+            @Result(column="email", property="email"),
+            @Result(column="dob", property="dob"),
+            @Result(column="phone", property="phone"),
+            @Result(column="degree", property="degree"),
+            @Result(column="gender", property="gender"),
+            @Result(column="qualification", property="qualification"),
+            @Result(column="yearOfJoining", property="year_of_joining"),
+            @Result(column="joiningTerm", property="joining_term"),
+            @Result(column="admissionNumber", property="admission_number")
+    })
+    Student getOneStudent(Student student);
 }

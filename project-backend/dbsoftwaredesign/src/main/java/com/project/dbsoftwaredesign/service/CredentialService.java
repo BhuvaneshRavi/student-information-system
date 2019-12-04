@@ -24,6 +24,19 @@ public class CredentialService {
         credentialMapper.removeCredentials(credentials);
     }
 
+    public String checkCredentials(Credentials credentials){
+        Credentials cred = credentialMapper.checkCredentials(credentials);
+        if(cred != null){
+            if(cred.getPassword().equals(credentials.getPassword())){
+                return "Success : Credential Check";
+            } else {
+                return "Failure : Credential Check";
+            }
+        }
+        else {
+            return "Failure : Credential Check";
+        }
+    }
     public List<Credentials> allCrederntials(Credentials credentials){
         return credentialMapper.allCredentials(credentials);
     }

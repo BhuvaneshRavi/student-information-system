@@ -30,4 +30,12 @@ public class StudentController {
     public List<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
+
+    @PostMapping("/getOneStudent")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public Student getOneStudent(@RequestBody Student student){
+        return studentService.getOneStudents(student);
+    }
+
 }
+

@@ -40,4 +40,8 @@ public class StudentService {
         return studentMapper.getAllStudents();
     }
 
+    public Student getOneStudents(Student student){
+        return studentMapper.getOneStudent(student);
+    }
+
 }
