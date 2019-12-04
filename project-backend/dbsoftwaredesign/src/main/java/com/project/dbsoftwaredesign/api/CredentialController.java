@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("api/v1/credential")
 @RestController
 public class CredentialController {
@@ -34,7 +34,7 @@ public class CredentialController {
 
     @PostMapping("/checkcredentials")
     @CrossOrigin(origins = "http://localhost:4200")
-    public String checkCredentials(@RequestBody Credentials credentials){
+    public Credentials checkCredentials(@RequestBody Credentials credentials){
         return credentialService.checkCredentials(credentials);
     }
 

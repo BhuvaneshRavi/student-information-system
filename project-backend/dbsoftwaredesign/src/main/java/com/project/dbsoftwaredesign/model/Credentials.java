@@ -6,6 +6,15 @@ public class Credentials {
     private String username;
     private String password;
     private String type;
+    private String loginStatus;
+
+    public String getLoginStatus() {
+        return loginStatus;
+    }
+
+    public void setLoginStatus(@JsonProperty("loginStatus") String loginStatus) {
+        this.loginStatus = loginStatus;
+    }
 
     public String getUsername() {
         return username;
