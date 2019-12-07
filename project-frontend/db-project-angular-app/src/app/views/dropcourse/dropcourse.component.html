@@ -1,0 +1,42 @@
+<BR> <BR>
+    <div class="w-100 p-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">  
+                <a routerLink="/login"> <button class="btn btn-link" type="button">View Student</button></a>
+                   <a routerLink="/addcourse"> <button class="btn btn-link" type="button">Add Course</button></a>   
+                        <a routerLink="/addadmin"> <button class="btn btn-link" type="button">Add Admin</button></a> 
+                        <a routerLink="/viewcourse"> <button class="btn btn-link" type="button">View Course</button></a> 
+                        <a routerLink="/dropcourse"> <button class="btn btn-link" type="button">Drop Course</button></a> 
+                        <a routerLink=""> <button class="btn btn-link" type="button">Logout</button></a> 
+        </nav>
+    </div>
+
+<div class="container">
+
+<div class="card">   
+        <div class="p-3 mb-2 bg-info text-white"> Drop Course</div>                  
+
+        <div class="card-body">
+            <div class="form-horizontal">
+                <form name ="form" [formGroup] ="form" #dropdata = "ngForm" (ngSubmit) ="onSubmit()">
+                    
+                    <div class="form-group"> 
+                        <label for="courseid" class="col-sm-3 control-label">Course id:</label>
+                        <div class="col-sm-9">
+                            <input type="text" id="id" placeholder="Course id" 
+                            class="form-control" formControlName="id" [ngClass] 
+                            = "{'is-invalid':form.get('id').touched && form.get('id').invalid}" ngModel>
+                            <div class = "invalid-feedback">
+                                <div>Course id is required</div>
+                            </div>  
+                         </div>   
+                    </div>
+                          
+                    <div class="col-sm-3 col-sm-offset-3">
+                    <button type="submit" class="btn btn-primary btn-block" value ="Drop">Drop Course</button>  
+                    </div>  
+                </form> <!-- /form -->
+            </div>
+        </div> <!-- ./container -->
+    </div>
+</div>
+    

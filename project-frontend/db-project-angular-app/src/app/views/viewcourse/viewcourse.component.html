@@ -1,0 +1,39 @@
+<BR> <BR>
+    <div class="w-100 p-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">  
+                <a routerLink="/login"> <button class="btn btn-link" type="button">View Student</button></a>
+                   <a routerLink="/addcourse"> <button class="btn btn-link" type="button">Add Course</button></a>   
+                        <a routerLink="/addadmin"> <button class="btn btn-link" type="button">Add Admin</button></a> 
+                        <a routerLink="/viewcourse"> <button class="btn btn-link" type="button">View Course</button></a> 
+                        <a routerLink="/dropcourse"> <button class="btn btn-link" type="button">Drop Course</button></a> 
+
+                        <a routerLink=""> <button class="btn btn-link" type="button">Logout</button></a> 
+        </nav>
+    </div>
+    <BR>
+        
+<div class="container">
+        <div class="p-3 mb-2 bg-info text-white"> View Course </div>
+
+<table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Course_Id</th>
+            <th>Course_Name</th>
+            <th>Department </th>
+            <th>Level</th>
+            <th>Credits</th>
+            <th>Offering_Term</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor = "let com of lstComments">
+            <td>{{com.id}}</td>
+            <td>{{com.name}}</td>
+            <td>{{com.department}}</td>
+            <td>{{com.level}}</td>
+            <td>{{com.credits}}</td>
+            <td>{{com.offeringTerm}}</td>
+        </tbody>
+    </table>
+</div>    

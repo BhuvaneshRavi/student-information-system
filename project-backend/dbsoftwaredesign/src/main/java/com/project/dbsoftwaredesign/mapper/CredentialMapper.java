@@ -1,5 +1,6 @@
 package com.project.dbsoftwaredesign.mapper;
 
+import com.project.dbsoftwaredesign.model.Admin;
 import com.project.dbsoftwaredesign.model.Credentials;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -12,6 +13,9 @@ public interface CredentialMapper {
 
     @Insert("insert into credentials(username,password,type) values (#{username},#{password},#{type})")
     void createCredentials(Credentials credentials);
+
+    @Insert("insert into admin(firstname,lastname,address,email,dob,phone,admintype) values (#{firstname},#{lastname},#{address},#{email},#{dob},#{phone},#{admintype})")
+    void addAdmin(Admin admin);
 
     @Delete("delete from credentials where username = #{username}")
     void removeCredentials(Credentials credentials);

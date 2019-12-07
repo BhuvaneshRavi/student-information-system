@@ -17,7 +17,15 @@ public class Student {
     private String joiningTerm;
     private String admissionNumber;
     private String password;
+    private String username;
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(@JsonProperty("username") String username) {
+        this.username = username;
+    }
 
     public String getId() {
         return id;

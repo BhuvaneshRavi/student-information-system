@@ -9,6 +9,24 @@ public class Course {
     private String level;
     private String credits;
     private String offeringTerm;
+    private String username;
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(@JsonProperty("status")String status) {
+        this.status = status;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(@JsonProperty("username") String username) {
+        this.username = username;
+    }
 
     public String getId() {
         return id;

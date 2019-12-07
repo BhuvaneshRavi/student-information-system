@@ -2,6 +2,7 @@ package com.project.dbsoftwaredesign.service;
 
 import com.project.dbsoftwaredesign.mapper.CourseMapper;
 import com.project.dbsoftwaredesign.model.Course;
+import com.project.dbsoftwaredesign.model.CourseEnrollment;
 import com.project.dbsoftwaredesign.model.Credentials;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,8 +18,9 @@ public class CourseService {
         this.courseMapper = courseMapper;
     }
 
-    public void addCourse(Course course){
+    public Course addCourse(Course course){
         courseMapper.createCourse(course);
+        return course;
     }
 
     public void removeCourse(Course course){
@@ -27,5 +29,16 @@ public class CourseService {
 
     public List<Course> allCourses(Course course){
         return courseMapper.allCourses(course);
+    }
+
+    public void enrollCourse(Course course){
+        courseMapper.enrollCourse(course);
+    }
+
+    public List<CourseEnrollment> viewCourse(CourseEnrollment course){
+        return courseMapper.viewCourse(course);
+    }
+    public void dropCourse(CourseEnrollment course){
+        courseMapper.dropCourse(course);
     }
 }

@@ -1,0 +1,47 @@
+
+
+<BR> <BR>
+<div class="w-100 p-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">  
+            <a routerLink="/login"> <button class="btn btn-link" type="button">View Student</button></a>
+               <a routerLink="/addcourse"> <button class="btn btn-link" type="button">Add Course</button></a>   
+                    <a routerLink="/addadmin"> <button class="btn btn-link" type="button">Add Admin</button></a> 
+                    <a routerLink="/viewcourse"> <button class="btn btn-link" type="button">View Course</button></a> 
+                    <a routerLink="/dropcourse"> <button class="btn btn-link" type="button">Drop Course</button></a>  
+                    <a routerLink=""> <button class="btn btn-link" type="button">Logout</button></a> 
+    </nav>
+</div>
+<BR>
+
+<div class="container">
+        <div class="p-3 mb-2 bg-info text-white"> View Students </div>
+
+<table class="table table-striped table-bordered" style="width:100%">
+    <thead>
+    <tr>
+        <th>Student_Id</th>
+        <th>First_Name</th>
+        <th>Last_Name </th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Bate_of_Birth</th>
+        <th>Phone</th>
+        <th>Degree</th>
+        <th>Gender</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor = "let com of lstComments">
+        <td>{{com.id}}</td>
+        <td>{{com.firstname}}</td>
+        <td>{{com.lastname}}</td>
+        <td>{{com.address}}</td>
+        <td>{{com.email}}</td>
+        <td>{{com.dob}}</td>
+        <td>{{com.phone}}</td>
+        <td>{{com.degree}}</td>
+        <td>{{com.gender}}</td>
+    </tbody>
+</table>
+</div>
+

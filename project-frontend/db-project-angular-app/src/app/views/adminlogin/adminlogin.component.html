@@ -1,0 +1,37 @@
+<BR>
+<div class="container">
+        <div class="row">
+          <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Admin Sign In Page </h5>
+                <form class="form-signin"  name ="form" [formGroup] ="form" #logindata = "ngForm"  (ngSubmit) ="onsubmit()">
+                  <div class="form-label-group">
+                    <div class="mt-2 col-md-12">
+                    <input type="text" id="username" placeholder="Username" 
+                            class="form-control" formControlName="username" [ngClass] 
+                            = "{'is-invalid':form.get('username').touched && form.get('username').invalid}" ngModel>
+                            <div class = "invalid-feedback">
+                                <div>username is required</div>
+                            </div>  
+                    </div>    
+                </div>
+                  <div class="form-label-group">
+                    <div class="mt-2 col-md-12"> 
+                        <input type="password" id="password" placeholder="password" 
+                        class="form-control" formControlName="password" [ngClass] 
+                        = "{'is-invalid':form.get('password').touched && form.get('password').invalid}" ngModel>
+                        <div class = "invalid-feedback">
+                            <div>password is required</div>
+                        </div>                  </div>   
+                </div>
+                <div class="mt-2 col-md-12">
+                  <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+    

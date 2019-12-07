@@ -1,29 +1,163 @@
+<BR>
+<BR>
+<BR>
+<div class="container" *ngIf="getShowLogin() === true">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Students Login in Page </h5>
+            <form class="form-signin"  name ="form" [formGroup] ="form" #logindata = "ngForm"  (ngSubmit) ="onsubmit()">
+              <div class="form-label-group">
+                <div class="mt-2 col-md-12">
+                <input type="text" id="username" placeholder="Username" 
+                        class="form-control" formControlName="username" [ngClass] 
+                        = "{'is-invalid':form.get('username').touched && form.get('username').invalid}" ngModel>
+                        <div class = "invalid-feedback">
+                            <div>username is required</div>
+                        </div>  
+                </div>    
+            </div>
+              <div class="form-label-group">
+                <div class="mt-2 col-md-12"> 
+                    <input type="password" id="password" placeholder="password" 
+                    class="form-control" formControlName="password" [ngClass] 
+                    = "{'is-invalid':form.get('password').touched && form.get('password').invalid}" ngModel>
+                    <div class = "invalid-feedback">
+                        <div>password is required</div>
+                    </div>                  </div>   
+            </div>
+            <div class="mt-2 col-md-12">
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="student-profile" *ngIf="getShowStudentProfile() === true">
+  <div class="p-3 mb-2 bg-info text-white"> Student Profile </div>
+  <div class="float-right">
+  <a routerLink=""> <button class="btn btn-primary" type="button">Logout</button></a>
+</div>
+    <div class="container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Student_Id</th>
+            <th>First_Name</th>
+            <th>Last_Name </th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Bate_of_Birth</th>
+            <th>Phone</th>
+            <th>Degree</th>
+            <th>Gender</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let com of lstComments">
+              <td>{{com.id}}</td>
+              <td>{{com.firstname}}</td>
+              <td>{{com.lastname}}</td>
+              <td>{{com.address}}</td>
+              <td>{{com.email}}</td>
+              <td>{{com.dob}}</td>
+              <td>{{com.phone}}</td>
+              <td>{{com.degree}}</td>
+              <td>{{com.gender}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+</div>
+<div class="enrolled-course" *ngIf="getShowEnrolledCourse() === true">
+    <div class="p-3 mb-2 bg-info text-white"> Enrolled Course </div>
+    <div class="float-right"><button type="submit" (click) ="displayEnrollCourseSection()"  class="btn btn-primary" > Click here to Enroll Course </button>
+    </div>
+    <div class="float-right"><button type="submit" (click) ="displayDropCourseSection()"  class="btn btn-primary" > Click here to Drop course </button>
+    </div>
+        <div class="container">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>course_id</th>
+              <th>Course_Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor = "let com of lstenrolled">
+              <td>{{com.courseid}}</td>
+              <td>{{com.name}}</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+</div>
+<div class="course-enrollment" *ngIf="getShowCourseEnrollment() === true">
+  <div class="p-3 mb-2 bg-info text-white"> Course enrollment </div>
+  <div class="float-right"><button type="submit" (click) ="viewcourses()"  class="btn btn-primary" > Click here to view courses </button>
+  </div>
+  <form name ="form1" [formGroup] ="form1" #coursedataa = "ngForm" (ngSubmit) ="onenrosubmit()">
+      <div class="form-group"> 
+        <div class = "col-md-4 mb-3">
+          <label for="courseid" class="col-sm-3 control-label">Course id :</label>
+          <div class="col-sm-9">
+            <input type="text" id="courseid" placeholder="Enter the course id" class="form-control" formControlName="courseid">
+          </div>   
+        </div>
+      </div>
+      <div class="col-sm-3 col-sm-offset-3">
+        <button type="submit" class="btn btn-primary btn-block" value ="Add Student">Enroll</button>  
+      </div>  
+    </form> 
+</div>
 
-  <div class="container">
-              <div class="row">
-                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                  <div class="card card-signin my-5">
-                    <div class="card-body">
-                      <h5 class="card-title text-center">Sign In Page </h5>
-                      <form class="form-signin">
-                        <div class="form-label-group">
-                          <div class="mt-2 col-md-12">
-                          <input type="username" id="inputusername" class="form-control" placeholder="Username" required autofocus>
-                          </div>    
-                      </div>
-                        <div class="form-label-group">
-                          <div class="mt-2 col-md-12">
-                          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                          </div>   
-                      </div>
-                      <div class="mt-2 col-md-12">
-                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-                      </div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>    
-  
- 
+<BR>
+<div class="show-course" *ngIf="getShowCourse() === true">
+<div class="p-3 mb-2 bg-info text-white"> Courses Available  </div>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Course_Id</th>
+        <th>Course_Name</th>
+        <th>Department </th>
+        <th>Level</th>
+        <th>Credits</th>
+        <th>Offering_Term</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let com of lstvcourse">
+          <td>{{com.id}}</td>
+          <td>{{com.name}}</td>
+          <td>{{com.department}}</td>
+          <td>{{com.level}}</td>
+          <td>{{com.credits}}</td>
+          <td>{{com.offeringTerm}}</td>
+        </tr> 
+      </tbody>
+    </table>
+</div>    
+</div>
+
+<div class="drop-course" *ngIf="getDropCourse() === true">
+    <div class="p-3 mb-2 bg-info text-white"> Drop Course </div>
+    <div class="centered">
+      <form name ="form1" [formGroup] ="form1" #coursedataa = "ngForm" (ngSubmit) ="onedrop()">
+          <div class="form-group"> 
+            <div class = "col-md-4 mb-3">
+              <label for="courseid" class="col-sm-3 control-label">Course id :</label>
+              <div class="col-sm-9">
+                <input type="text" id="courseid" placeholder="Enter the course id" class="form-control" formControlName="courseid">
+              </div>   
+            </div>
+          </div>
+          <div class="col-sm-3 col-sm-offset-3">
+            <button type="submit" class="btn btn-primary btn-block" value ="Add Student">Drop Course</button>  
+          </div>  
+        </form> 
+    </div>
+</div>

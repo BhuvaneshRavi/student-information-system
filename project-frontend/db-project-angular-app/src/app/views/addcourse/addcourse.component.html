@@ -1,0 +1,129 @@
+<BR> <BR>
+    <div class="w-100 p-3">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">  
+                <a routerLink="/login"> <button class="btn btn-link" type="button">View Student</button></a>
+                   <a routerLink="/addcourse"> <button class="btn btn-link" type="button">Add Course</button></a>   
+                        <a routerLink="/addadmin"> <button class="btn btn-link" type="button">Add Admin</button></a> 
+                        <a routerLink="/viewcourse"> <button class="btn btn-link" type="button">View Course</button></a>
+                        <a routerLink="/dropcourse"> <button class="btn btn-link" type="button">Drop Course</button></a>  
+                        <a routerLink=""> <button class="btn btn-link" type="button">Logout</button></a> 
+        </nav>
+    </div>
+ 
+    <div class="container">
+    
+        <div class="card">   
+                <div class="p-3 mb-2 bg-info text-white"> Add Course </div>                  
+
+        <div class="card-body">
+            <div class="form-horizontal">
+                         
+
+                   
+                <form name ="form" [formGroup] ="form" #coursedata = "ngForm" (ngSubmit) ="onSubmit()">
+                    
+                    <div class="form-group"> 
+                        <label for="courseid" class="col-sm-3 control-label">Course id:</label>
+                        <div class="col-sm-9">
+                            <input type="text" id="courseid" placeholder="Course id" 
+                            class="form-control" formControlName="id" [ngClass] 
+                            = "{'is-invalid':form.get('id').touched && form.get('id').invalid}" ngModel>
+                            <div class = "invalid-feedback">
+                                <div>Course id is required</div>
+                            </div>  
+                         </div>   
+                    </div>
+        
+                    <div class="form-group">
+                        <label for="coursename" class="col-sm-3 control-label">Course name:</label>
+                        <div class="col-sm-9">
+                            <input type="text" id="coursename" placeholder="Course Name" class="form-control" formControlName="name"
+                            [ngClass] ="{'is-invalid':form.get('name').touched && form.get('name').invalid}" >
+                             <div class = "invalid-feedback">
+                                <div>Course Name is required</div>
+                            </div> 
+                        </div> 
+                    </div>
+        
+                    <div class="form-group">
+                            <label for="department" class="col-sm-3 control-label">Department :</label>
+                        <div class="col-sm-9">
+                            <select class = "form-control" id ="department" class="form-control" formControlName="department"
+                            [ngClass] ="{'is-invalid':form.get('department').touched && form.get('department').invalid}">
+                                <option>Computer Science</option>
+                                <option>Natural Science</option>
+                                <option>Bussiness Admistration</option>
+                                <option>Mechnical</option>
+                                <option>Bio Medicne</option>
+                                <option>sociology</option>
+                            </select>
+                        </div>
+                        <div class = "invalid-feedback">
+                                <div>Please choose the department</div>
+                            </div>  
+                    </div>
+        
+                    <div class="form-group">
+                        <label class="control-label col-sm-3">Level:</label>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label class="radio-inline">
+                                        <input type="radio" id="Graduate" value="Graduate" formControlName="level">Graduate
+                                    </label>
+                                </div>  
+        
+                                <div class="col-sm-4">
+                                    <label class="radio-inline">
+                                        <input type="radio" id="UnderGraduate" value="UnderGraduate" formControlName="level">UnderGraduate
+                                    </label>
+                                </div>
+                            </div>
+                            <div class = "invalid-feedback">
+                                    <div>Select the level of required</div>
+                                </div>  
+                        </div>
+                    </div> <!-- /.form-group -->
+        
+                    <div class="form-group">
+                            <label for="credits" class="col-sm-3 control-label">Credit :</label>
+                        <div class="col-sm-9">
+                            <select class = "form-control" id ="credits" class="form-control" formControlName="credits"
+                            [ngClass] ="{'is-invalid':form.get('credits').touched && form.get('credits').invalid}">
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                            </select>
+                        </div>
+                        <div class = "invalid-feedback">
+                                <div>Please choose the credit</div>
+                            </div>  
+                    </div>
+            
+
+                    <div class="form-group">
+                            <label for="offeringTerm" class="col-sm-3 control-label"> offeringTerm </label>
+                        <div class="col-sm-9">
+                            <select class = "form-control" id ="offeringTerm" formControlName="offeringTerm">
+                                <option>Fall</option>
+                                <option>Winter</option>
+                                <option>Summer</option>
+                            </select>
+                        </div>
+                        <div class = "invalid-feedback">
+                                <div>Offering term required</div>
+                            </div>  
+                    </div>               
+                    
+                    <div class="col-sm-3 col-sm-offset-3">
+                    <button type="submit" class="btn btn-primary btn-block" value ="Add Course">Add</button>  
+                    </div>  
+                </form> <!-- /form -->
+            </div>
+        </div> <!-- ./container -->
+    </div>
+    
+    

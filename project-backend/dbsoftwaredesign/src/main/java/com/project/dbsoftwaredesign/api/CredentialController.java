@@ -1,5 +1,6 @@
 package com.project.dbsoftwaredesign.api;
 
+import com.project.dbsoftwaredesign.model.Admin;
 import com.project.dbsoftwaredesign.model.Credentials;
 import com.project.dbsoftwaredesign.service.CredentialService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +21,10 @@ public class CredentialController {
 
     @PostMapping("/addadmin")
     @CrossOrigin(origins = "http://localhost:4200")
-    public String createCredentialsToAdmin(@RequestBody Credentials credentials){
-        credentialService.createCredentials(credentials);
-        return credentials.getUsername().concat("  added successfully");
+    public Admin createCredentialsToAdmin(@RequestBody Admin admin){
+        credentialService.addAdmin(admin);
+        admin.setStatus("true");
+        return admin;
     }
 
     @PostMapping("/removeadmin")

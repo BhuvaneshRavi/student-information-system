@@ -1,21 +1,24 @@
+<BR>
+    <BR>
+<div class="container">
+
 <div class="card">   
 
     <div class="card-body">
+            <div class="p-3 mb-2 bg-info text-white"> Student Registration Form </div>                  
+
         <div class="form-horizontal">
-            <pre>
-                {{json}}
-            </pre>
-             
-                <h2>Student Registration Form</h2>
+                     
+                <h6> Please fill the below form to register with the university.. On submisson of your form you will recieve your user name and password </h6>
                
             <form name ="form" [formGroup] ="form" #studentdata = "ngForm" (ngSubmit) ="onSubmit()">
                 
                 <div class="form-group"> 
                     <label for="firstName" class="col-sm-3 control-label">First Name :</label>
                     <div class="col-sm-9">
-                        <input type="text" id="firstName" placeholder="First Name" 
-                        class="form-control" formControlName="firstName" [ngClass] 
-                        = "{'is-invalid':form.get('firstName').touched && form.get('firstName').invalid}" ngModel>
+                        <input type="text" id="firstname" placeholder="First Name" 
+                        class="form-control" formControlName="firstname" [ngClass] 
+                        = "{'is-invalid':form.get('firstname').touched && form.get('firstname').invalid}" ngModel>
                         <div class = "invalid-feedback">
                             <div>First Name is required</div>
                         </div>  
@@ -25,8 +28,8 @@
                 <div class="form-group">
                     <label for="lastName" class="col-sm-3 control-label">Last Name :</label>
                     <div class="col-sm-9">
-                        <input type="text" id="lastName" placeholder="Last Name" class="form-control" formControlName="lastName"
-                        [ngClass] ="{'is-invalid':form.get('lastName').touched && form.get('lastName').invalid}" >
+                        <input type="text" id="lastname" placeholder="Last Name" class="form-control" formControlName="lastname"
+                        [ngClass] ="{'is-invalid':form.get('lastname').touched && form.get('lastname').invalid}" >
                          <div class = "invalid-feedback">
                             <div>Last Name is required</div>
                         </div> 
@@ -36,8 +39,8 @@
                 <div class="form-group">
                     <label for="Address" class="col-sm-3 control-label">Address: </label>
                     <div class="col-sm-9">
-                        <input type="text" id="Address" placeholder="Address" class="form-control" name= "Address" formControlName="Address"
-                        [ngClass] ="{'is-invalid':form.get('Address').touched && form.get('Address').invalid}">
+                        <input type="text" id="address" placeholder="Address" class="form-control" name= "address" formControlName="address"
+                        [ngClass] ="{'is-invalid':form.get('address').touched && form.get('address').invalid}">
                         <div class = "invalid-feedback">
                             <div>Address is required</div>
                         </div> 
@@ -59,8 +62,8 @@
                <div class="form-group">
                     <label for="birthDate" class="col-sm-3 control-label">Date of Birth: </label>
                     <div class="col-sm-9">
-                        <input type="date" id="birthDate" class="form-control" formControlName="birthDate"
-                         [ngClass] ="{'is-invalid':form.get('birthDate').touched && form.get('birthDate').invalid}">
+                        <input type="date" id="dob" class="form-control" formControlName="dob"
+                         [ngClass] ="{'is-invalid':form.get('dob').touched && form.get('dob').invalid}">
                         <div class = "invalid-feedback">
                             <div>Date of Birth is required</div>
                         </div>  
@@ -70,8 +73,8 @@
                 <div class="form-group">
                     <label for="phoneNumber" class="col-sm-3 control-label">Phone number: </label>
                     <div class="col-sm-9">
-                        <input type="Number" id="phoneNumber" placeholder="Phone number" class="form-control" formControlName="phoneNumber"
-                        [ngClass] ="{'is-invalid':form.get('phoneNumber').touched && form.get('phoneNumber').invalid}">
+                        <input type="Number" id="phone" placeholder="Phone number" class="form-control" formControlName="phone"
+                        [ngClass] ="{'is-invalid':form.get('phone').touched && form.get('phone').invalid}">
     
                         <div class = "invalid-feedback">
                                 <div>Phone number is required</div>
@@ -81,10 +84,10 @@
                 </div>
            
                 <div class="form-group">
-                        <label for="Degree" class="col-sm-3 control-label">Degree :</label>
+                        <label for="degree" class="col-sm-3 control-label">Degree :</label>
                     <div class="col-sm-9">
-                        <select class = "form-control" id ="Degree" class="form-control" formControlName="Degree"
-                        [ngClass] ="{'is-invalid':form.get('Degree').touched && form.get('Degree').invalid}">
+                        <select class = "form-control" id ="degree" class="form-control" formControlName="degree"
+                        [ngClass] ="{'is-invalid':form.get('degree').touched && form.get('degree').invalid}">
                             <option>B.sc</option>
                             <option>M.sc</option>
                             <option>B.E</option>
@@ -104,13 +107,13 @@
                         <div class="row">
                             <div class="col-sm-4">
                                 <label class="radio-inline">
-                                    <input type="radio" id="Male" value="Male" formControlName="Gender">Male
+                                    <input type="radio" id="Male" value="Male" formControlName="gender">Male
                                 </label>
                             </div>  
     
                             <div class="col-sm-4">
                                 <label class="radio-inline">
-                                    <input type="radio" id="Female" value="Female" formControlName="Gender">Female
+                                    <input type="radio" id="Female" value="Female" formControlName="gender">Female
                                 </label>
                             </div>
                         </div>
@@ -123,7 +126,7 @@
                 <div class="form-group">
                         <label for="qualification" class="col-sm-3 control-label"> Previous Academic Qualification: </label>
                     <div class="col-sm-9">
-                        <select class = "form-control" id ="sel1" formControlName="sel1">
+                        <select class = "form-control" id ="qualification" formControlName="qualification">
                             <option>10th</option>
                             <option>12th</option>
                             <option>Bachelors</option>
@@ -138,7 +141,7 @@
                 <div class="form-group">
                     <label for="Joining year" class="col-sm-3 control-label"> Joining year: </label>
                     <div class="col-sm-9">
-                        <select class = "form-control" id ="sel3" formControlName="sel3">
+                        <select class = "form-control" id ="yearOfJoining" formControlName="yearOfJoining">
                         <option>2019</option>
                         <option>2020</option>
                         <option>2021</option>
@@ -153,7 +156,7 @@
                 <div class="form-group">
                     <label for="Joining term" class="col-sm-3 control-label"> Joining term: </label>
                 <div class="col-sm-9">
-                    <select class = "form-control" id ="sel2" formControlName="sel2">
+                    <select class = "form-control" id ="joiningTerm" formControlName="joiningTerm">
                         <option>Fall</option>
                         <option>Winter</option>
                         <option>Summer</option>
@@ -165,10 +168,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="admission" class="col-sm-3 control-label">Admission Number :</label>
+                    <label for="admissionNumber" class="col-sm-3 control-label">Admission Number :</label>
                     <div class="col-sm-9">
-                        <input type="text" id="admission" placeholder="Admission number" class="form-control" formControlName="admission"
-                        [ngClass] ="{'is-invalid':form.get('admission').touched && form.get('admission').invalid}" >
+                        <input type="text" id="admission" placeholder="Admission number" class="form-control" formControlName="admissionNumber"
+                        [ngClass] ="{'is-invalid':form.get('admissionNumber').touched && form.get('admissionNumber').invalid}" >
                          <div class = "invalid-feedback">
                             <div>Admission number is required</div>
                         </div> 
@@ -177,10 +180,10 @@
 
                 
                 <div class="col-sm-3 col-sm-offset-3">
-                <button type="submit" class="btn btn-primary btn-block" value ="Add Student">Register</button>
-                </div>    
+                <button type="submit" class="btn btn-primary btn-block" value ="Add Student">Register</button>  
+                </div>  
             </form> <!-- /form -->
         </div>
     </div> <!-- ./container -->
 </div>
-    
+</div>

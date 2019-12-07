@@ -1,6 +1,7 @@
 package com.project.dbsoftwaredesign.service;
 
 import com.project.dbsoftwaredesign.mapper.CredentialMapper;
+import com.project.dbsoftwaredesign.model.Admin;
 import com.project.dbsoftwaredesign.model.Credentials;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,15 @@ public class CredentialService {
 
     public void createCredentials(Credentials credentials){
         credentialMapper.createCredentials(credentials);
+     }
+
+     public void addAdmin(Admin admin){
+         credentialMapper.addAdmin(admin);
+         Credentials cred = new Credentials();
+         cred.setUsername(admin.getUsername());
+         cred.setPassword(admin.getPassword());
+         cred.setType("admin");
+         credentialMapper.createCredentials(cred);
      }
 
     public void removeCredentials(Credentials credentials){

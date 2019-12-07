@@ -49,7 +49,7 @@ public interface StudentMapper {
     })
     List<Student> getAllStudents();
 
-    @Select("select id, firstname,lastname,address,email,dob,phone,degree,gender,qualification,year_of_joining,joining_term,admission_number from student where id = #{id}")
+    @Select("select id, firstname,lastname,address,email,dob,phone,degree,gender,qualification,year_of_joining,joining_term,admission_number from student where id = #{username}")
     @Results({
             @Result(column="id", property="id"),
             @Result(column="firstname", property="firstname"),
